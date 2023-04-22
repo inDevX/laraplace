@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class State extends Model
+class CompanyState extends Model
 {
     use HasFactory;
 
@@ -24,12 +24,12 @@ class State extends Model
         'user_id',
     ];
 
-    public function Company(): BelongsTo
+    public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);
     }
 
-    public function Users(): HasMany
+    public function csers(): HasMany
     {
         return $this->hasMany(User::class);
     }

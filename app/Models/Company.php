@@ -19,11 +19,12 @@ class Company extends Model
         'title',
         'slug',
         'description',
-        'is_verified'
+        'is_verified',
+
     ];
 
-    public function State(): HasOne
+    public function companyState(): HasOne
     {
-        return $this->hasOne(State::class);
+        return $this->hasOne(CompanyState::class);
     }
 }
