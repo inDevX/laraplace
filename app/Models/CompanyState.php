@@ -31,7 +31,7 @@ class CompanyState extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public function users(): HasMany
+    public function employees(): HasMany
     {
         return $this->hasMany(User::class);
     }
