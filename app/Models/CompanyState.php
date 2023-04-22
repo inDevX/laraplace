@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CompanyState extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -29,7 +31,7 @@ class CompanyState extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public function csers(): HasMany
+    public function users(): HasMany
     {
         return $this->hasMany(User::class);
     }
